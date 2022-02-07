@@ -1,9 +1,13 @@
+:root {
+  --size: 150px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
 }
 
 a {
@@ -21,14 +25,19 @@ a {
 }
 
 .title {
-  font-size: 2rem;
-  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  font-size: 3rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .photo_container {
-  position: relative;
-
-  display: inline-block;
-  height: 150px;
-  width: 150px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  transform: scale(0.3);
+  top: calc(50% - var(--size) / 2);
+  left: calc(50% - var(--size) / 2);
 }
