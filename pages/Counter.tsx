@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
 import { photos } from "../src/photos";
-
-const styles = {
-  text: {
-    alignText: "center",
-  },
-};
+import { moveAvatars } from "../src/moveAvatars";
 
 const Counter = () => {
   const [counter, setCounter] = useState("");
@@ -25,23 +19,25 @@ const Counter = () => {
     return () => clearTimeout(s);
   });
 
+  useEffect(() => {
+    moveAvatars()
+  }, [])
+
   return (
     <div>
-      <div>
-        {photos.map((photo) => (
-          <div className="photo_container" key={photo.slice(5)}>
-            <Image
-              src={photo}
-              className="photo"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-              alt="photo"
-            />
-          </div>
-        ))}
-      </div>
-      <p className="title">Viajamos en {counter} dias</p>
+      {photos.map((photo) => (
+        <div className="photo_container" key={photo.slice(5)}>
+          <Image
+            src={photo}
+            className="photo"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            alt="photo"
+          />
+        </div>
+      ))}
+      <p className="title">Viajamos en {counter} días</p>
     </div>
   );
 };
