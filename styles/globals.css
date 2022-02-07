@@ -24,3 +24,11 @@ a {
   font-size: 2rem;
   text-align: center;
 }
+
+.photo_container {
+  position: relative;
+
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+}

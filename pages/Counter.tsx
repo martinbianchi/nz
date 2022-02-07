@@ -29,14 +29,16 @@ const Counter = () => {
     <div>
       <div>
         {photos.map((photo) => (
-          <Image
-            src={photo}
-            height={150}
-            width={150}
-            className="photo"
-            alt="photo"
-            key={photo.slice(5)}
-          />
+          <div className="photo_container" key={photo.slice(5)}>
+            <Image
+              src={photo}
+              className="photo"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              alt="photo"
+            />
+          </div>
         ))}
       </div>
       <p className="title">Viajamos en {counter} dias</p>
