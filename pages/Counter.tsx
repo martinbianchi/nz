@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-import { photos } from "./photos";
+import { photos } from "../src/photos";
 
 const styles = {
   text: {
