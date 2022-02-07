@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+
+import { photos } from "./photos";
+
+const styles = {
+  text: {
+    alignText: "center",
+  },
+};
 
 const Counter = () => {
   const [counter, setCounter] = useState("");
@@ -18,7 +27,19 @@ const Counter = () => {
 
   return (
     <div>
-      <p>Viajamos en {counter} dias</p>
+      <div>
+        {photos.map((photo) => (
+          <Image
+            src={photo}
+            height={150}
+            width={150}
+            className="photo"
+            alt="photo"
+            key={photo.slice(5)}
+          />
+        ))}
+      </div>
+      <p className="title">Viajamos en {counter} dias</p>
     </div>
   );
 };

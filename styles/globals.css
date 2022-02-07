@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.photo {
+  border-radius: 75px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
