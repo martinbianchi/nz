@@ -16,7 +16,10 @@ const Counter = ({ remainingDays }: CounterProps) => {
     <div>
       <div>
         {photos.map((photo) => (
-          <div className="photo_container" key={photo.slice(5)}>
+          <div
+            className="photo_container  rotate-scale-down"
+            key={photo.slice(5)}
+          >
             <Image
               src={photo}
               className="photo"
