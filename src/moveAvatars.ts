@@ -14,13 +14,13 @@ function moveAvatars() {
       // images styles
       div.style.top = y + 'px'
       div.style.left = x + 'px'
-      div.style.transition = '5000ms'
+      div.style.transition = '1200ms'
       div.style.transform = 'scale(1)'
     })
   }
 
   move()
-  window.setInterval(move, 5000)
+  window.setInterval(move, 1200)
 }
 
 export { moveAvatars }
