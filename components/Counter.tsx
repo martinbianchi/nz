@@ -1,13 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { photos } from "../src/photos";
 import { moveAvatars } from "../src/moveAvatars";
+import { Countdown } from "./Countdown";
 
-type CounterProps = {
-  remainingDays: number;
-};
+const Counter = () => {
+  const [hasClass, setHasClass] = useState(false);
 
-const Counter = ({ remainingDays }: CounterProps) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHasClass((prev) => !prev);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  });
+
   useEffect(() => {
     moveAvatars();
   }, []);
@@ -31,8 +38,14 @@ const Counter = ({ remainingDays }: CounterProps) => {
           </div>
         ))}
       </div>
-
-      <p className="title">Viajamos en {remainingDays} dias</p>
+      <div
+        className={["counter_container"]
+          .concat(hasClass ? ["shake-lr"] : [])
+          .join(" ")}
+      >
+        <p className="title">Viajamos en </p>
+        <Countdown />
+      </div>
     </div>
   );
 };
