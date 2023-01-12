@@ -1,10 +1,10 @@
 const photos: string[] = [
-  "/img/mauri.png",
-  "/img/juan.png",
-  "/img/bauti.png",
+  "/img/colo.jpeg",
+  "/img/lu.jpeg",
+  "/img/maki.jpeg",
   "/img/Octa.png",
   "/img/pom.png",
-  "/img/andy.png",
+  "/img/mica.jpeg",
   "/img/tincho.png",
 ];
 

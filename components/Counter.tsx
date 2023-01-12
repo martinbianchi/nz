@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { photos } from "../src/photos";
 import { moveAvatars } from "../src/moveAvatars";
-import { Countdown } from "./Countdown";
+// import { Countdown } from "./Countdown";
+import dynamic from "next/dynamic";
+
+const Countdown = dynamic(
+  async () => {
+    const mod = await import("./Countdown");
+    return mod.Countdown;
+  },
+  { ssr: false }
+);
 
 const Counter = () => {
   const [hasClass, setHasClass] = useState(false);
